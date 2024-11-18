@@ -74,3 +74,4 @@ INSERT INTO `home_and_beaty_co`.`clientes` (`id_cliente`, `nombre`, `apellido`, 
              VALUES ('17', 'Joaquin', 'Toldo', 'jtoldo@hotmail.com', '985248034', '2024-10-24 15:54:12', 'M');
 INSERT INTO `home_and_beaty_co`.`clientes` (`id_cliente`, `nombre`, `apellido`, `email`, `telefono`, `fecha_registro`, `sexo`) 
              VALUES ('18', 'Yesica', 'Funes', 'yfunes4@yahoo.com', '384590891', '2024-10-24 16:45:32', 'F');
+
