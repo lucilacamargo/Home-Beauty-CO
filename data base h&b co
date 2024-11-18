@@ -23,7 +23,7 @@ CREATE TABLE productos (
     );
 
 CREATE TABLE pedidos (
-    id_orden numeric,
+    id_orden INT PRIMARY KEY AUTO_INCREMENT,
     id_cliente INT FOREIGN KEY REFERENCES clientes(id_clientes),
     fecha_pedido DATETIME,
     estado_del_pedido ENUM('aprobado', 'preparado', 'despachado') NOT NULL,
@@ -76,28 +76,28 @@ INSERT INTO `home_and_beaty_co`.`clientes` (`id_cliente`, `nombre`, `apellido`, 
 INSERT INTO `home_and_beaty_co`.`clientes` (`id_cliente`, `nombre`, `apellido`, `email`, `telefono`, `fecha_registro`, `sexo`) 
              VALUES ('18', 'Yesica', 'Funes', 'yfunes4@yahoo.com', '384590891', '2024-10-24 16:45:32', 'F');
 
-INSERT INTO productos ('id_producto', 'nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
-           VALUES ('0001', 'servilletero', 'servilletero clasico', '2560', 'hogar', '300', '2024-09-01');
-INSERT INTO productos ('id_producto', 'nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
-           VALUES ('0002', 'set cubiertos osito rosa', 'tenedor cuchillo y cuchara diseño osito color rosa', '2000', 'hogar', '300', '2024-09-01');
-INSERT INTO productos ('id_producto', 'nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
-           VALUES ('0003', 'set cubiertos osito verde', 'tenedor cuchillo y cuchara diseño osito color verde', '2000', 'hogar', '300', '2024-09-01');
-INSERT INTO productos ('id_producto', 'nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
-           VALUES ('0004', 'tabla de cocina', 'tabla de cortar clasica', '3000', 'hogar', '300', '2024-09-01');
-INSERT INTO productos ('id_producto', 'nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
-           VALUES ('0005', 'set platos x6 blanco', 'platos de porcelana blancos pack x6 unidades', '15000', 'hogar', '50', '2024-09-01');
-INSERT INTO productos ('id_producto', 'nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
-           VALUES ('0006', 'labial maybelline lip gloss', 'gloss marca maybelline', '12000', 'belleza', '100', '2024-09-02');
-INSERT INTO productos ('id_producto', 'nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
-           VALUES ('0007', 'mask pestañas', 'mascara de pestañas marca maybelline high sky', '14000', 'belleza', '100', '2024-09-02');
-INSERT INTO productos ('id_producto', 'nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
-           VALUES ('0008', 'labial maybelline lip gloss', 'gloss marca maybelline', '12000', 'belleza', '100', '2024-09-02');
+INSERT INTO productos ('nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
+           VALUES ('servilletero', 'servilletero clasico', '2560', 'hogar', '300', '2024-09-01');
+INSERT INTO productos ('nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
+           VALUES ('set cubiertos osito rosa', 'tenedor cuchillo y cuchara diseño osito color rosa', '2000', 'hogar', '300', '2024-09-01');
+INSERT INTO productos ('nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
+           VALUES ('set cubiertos osito verde', 'tenedor cuchillo y cuchara diseño osito color verde', '2000', 'hogar', '300', '2024-09-01');
+INSERT INTO productos ('nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
+           VALUES ('tabla de cocina', 'tabla de cortar clasica', '3000', 'hogar', '300', '2024-09-01');
+INSERT INTO productos ('nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
+           VALUES ('set platos x6 blanco', 'platos de porcelana blancos pack x6 unidades', '15000', 'hogar', '50', '2024-09-01');
+INSERT INTO productos ('nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
+           VALUES ('labial maybelline lip gloss', 'gloss marca maybelline', '12000', 'belleza', '100', '2024-09-02');
+INSERT INTO productos ('nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
+           VALUES ('mask pestañas', 'mascara de pestañas marca maybelline high sky', '14000', 'belleza', '100', '2024-09-02');
+INSERT INTO productos ('nombre', 'descripción_producto', 'precio', 'categoria', 'stock', 'fecha_ingreso')
+           VALUES ('labial maybelline lip gloss', 'gloss marca maybelline', '12000', 'belleza', '100', '2024-09-02');
 
 
-INSERT INTO empleados ('id_empleados', 'nombre', 'fecha_de_nacimiento', 'sexo', 'fecha_de_ingreso', 'fecha_de_retiro', 'estado')
-           VALUES ('01', 'Tobias Allem', '1995-05-25', 'M', '2024-09-01', '-', 'activo');
-INSERT INTO empleados ('id_empleados', 'nombre', 'fecha_de_nacimiento', 'sexo', 'fecha_de_ingreso', 'fecha_de_retiro', 'estado')
-           VALUES ('02', 'Alba Quiroga', '1990-09-12', 'F', '2024-09-01', '-', 'activo');
+INSERT INTO empleados ('nombre', 'fecha_de_nacimiento', 'sexo', 'fecha_de_ingreso', 'fecha_de_retiro', 'estado')
+           VALUES ('Tobias Allem', '1995-05-25', 'M', '2024-09-01', '-', 'activo');
+INSERT INTO empleados ('nombre', 'fecha_de_nacimiento', 'sexo', 'fecha_de_ingreso', 'fecha_de_retiro', 'estado')
+           VALUES ('Alba Quiroga', '1990-09-12', 'F', '2024-09-01', '-', 'activo');
 
 
 
