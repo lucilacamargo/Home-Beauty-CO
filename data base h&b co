@@ -40,6 +40,14 @@ CREATE TABLE empleados (
     fecha_de_retiro DATE, 
     estado ENUM('activo', 'no activo')
     );
+CREATE TABLE proveedores (
+    id_proveedor INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR (50) NOT NULL, 
+    producto INT FOREIGN KEY REFERENCES productos(id_producto), 
+    web TEXT;
+    fecha_de_ingreso DATE NOT NULL, 
+    recibe_pedido FOREIGN KEY REFERENCES empleados (nombre),
+    );
 
 INSERT INTO clientes (nombre, apellido, email, telefono, fecha_registro, sexo) 
 VALUES ('Juan', 'Pérez', 'juan@gmail.com', '123456789', '2024-11-13 22:30:08', 'M');
