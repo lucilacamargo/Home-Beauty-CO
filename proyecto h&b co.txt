@@ -1,0 +1,76 @@
+CREATE DATABASE home_and_beaty_co; 
+USE home_and_beaty_co;
+
+CREATE TABLE clientes (
+    id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    fecha_nacimiento DATE,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    telefono VARCHAR(15),
+    sexo ENUM('M', 'F', 'Otro') NOT NULL,
+    fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+
+CREATE TABLE productos (
+    id_producto INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion_producto TEXT,
+    precio DECIMAL(10,2) NOT NULL,
+    categoria ENUM('hogar', 'belleza', 'moda') NOT NULL,
+    stock INT DEFAULT 0,
+    fecha_ingreso DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+
+CREATE TABLE pedidos (
+    id_orden numeric,
+    id_cliente INT FOREIGN KEY REFERENCES clientes(id_clientes),
+    fecha_pedido DATETIME,
+    estado_del_pedido ENUM('aprobado', 'preparado', 'despachado') NOT NULL,
+    id_producto INT PRIMARY KEY AUTO_INCREMENT,
+    categoría_producto ENUM('hogar', 'belleza', 'moda') NOT NULL
+);
+
+CREATE TABLE empleados (
+    id_empleados INT PRIMARY KEY AUTO_INCREMENT,
+    fecha_de_nacimiento DATE,
+    sexo ENUM('M', 'F', 'Otro') NOT NULL, 
+    fecha_de_ingreso DATE, 
+    fecha_de_retiro DATE NOT NULL, 
+    estado ENUM('activo', 'no activo')
+    );
+
+INSERT INTO clientes (nombre, apellido, email, telefono, fecha_registro, sexo) 
+VALUES ('Juan', 'Pérez', 'juan@gmail.com', '123456789', '2024-11-13 22:30:08', 'M');
+INSERT INTO clientes (nombre, apellido, email, telefono, fecha_registro, sexo) 
+VALUES ('Juan', 'Marco', 'jmarco@gmail.com', '286754691', '2024-11-13 22:32:03', 'M');
+
+INSERT INTO clientes (nombre, apellido, email, telefono, fecha_registro, sexo) 
+VALUES ('Luciano', 'Chevez', 'lucianochavez@gmail.com', '285454691', '2024-11-13 22:40:56', 'M'),
+	     ('Leandro', 'Sosa', 'leandrososa@gmail.com', '285458731', '2024-11-13 22:42:32', 'M'), 
+       ('Pedro', 'Gonzales', 'pedrogonzales@gmail.com', '286792691','2024-11-13 22:46:07', 'M') ;
+
+INSERT INTO clientes (nombre, apellido, email, telefono, fecha_registro, sexo) 
+VALUES ('Catalina', 'Hom', 'chom12@gmail.com', '263454691','2024-10-13 22:48:54', 'F'),
+	     ('Leandra', 'Camargo', 'leancamargo@gmail.com', '285494621','2024-10-13 22:49:06', 'F'), 
+       ('Rocio', 'Balliro', 'brocio@gmail.com', '987654321','2024-10-13 22:57:07', 'F') ;
+
+INSERT INTO clientes (nombre, apellido, email, telefono, fecha_registro, sexo) 
+VALUES ('Ana', 'Sosa', 'anasosa@gmail.com', '285458731','2024-10-13 22:58:34', 'F') ;
+
+INSERT INTO `home_and_beaty_co`.`clientes` (`id_cliente`, `nombre`, `apellido`, `email`, `telefono`, `fecha_registro`, `sexo`)
+             VALUES ('11', 'Carlos', 'Alvarez', 'calcavez@gmail.com', '263457876','2024-10-23 21:38:56', 'M')
+INSERT INTO `home_and_beaty_co`.`clientes` (`id_cliente`, `nombre`, `apellido`, `email`, `telefono`, `fecha_registro`, `sexo`)
+             VALUES ('12', 'Mariana', 'Calabri', 'calabri2@gmail.com', '261349856', '2024-11-13 19:54:56', 'F')
+INSERT INTO `home_and_beaty_co`.`clientes` (`id_cliente`, `nombre`, `apellido`, `email`, `telefono`, `fecha_registro`, `sexo`)
+             VALUES ('13', 'Juana', 'Muñoz', 'mjuana7@gmail.com', '284593215', '2024-11-13 19:54:56', 'F')
+INSERT INTO `home_and_beaty_co`.`clientes` (`id_cliente`, `nombre`, `apellido`, `email`, `telefono`, `fecha_registro`, `sexo`)
+             VALUES ('14', 'Lucia', 'Kio', 'kiol@gmail.com', '285359861', '2024-11-15 15:34:32', 'F')
+INSERT INTO `home_and_beaty_co`.`clientes` (`id_cliente`, `nombre`, `apellido`, `email`, `telefono`, `fecha_registro`, `sexo`)
+             VALUES ('15', 'Pedro', 'Nuñez', 'nuñezpe@hotmail.com', '257490860', '2024-11-16 22:38:59', 'M')
+INSERT INTO `home_and_beaty_co`.`clientes` (`id_cliente`, `nombre`, `apellido`, `email`, `telefono`, `fecha_registro`, `sexo`) 
+             VALUES ('16', 'Tadeo', 'Juarez', 'tjuarez@gmail.com', '257490860', '2024-10-23 21:38:56', 'M');
+INSERT INTO `home_and_beaty_co`.`clientes` (`id_cliente`, `nombre`, `apellido`, `email`, `telefono`, `fecha_registro`, `sexo`)
+             VALUES ('17', 'Joaquin', 'Toldo', 'jtoldo@hotmail.com', '985248034', '2024-10-24 15:54:12', 'M');
+INSERT INTO `home_and_beaty_co`.`clientes` (`id_cliente`, `nombre`, `apellido`, `email`, `telefono`, `fecha_registro`, `sexo`) 
+             VALUES ('18', 'Yesica', 'Funes', 'yfunes4@yahoo.com', '384590891', '2024-10-24 16:45:32', 'F');
